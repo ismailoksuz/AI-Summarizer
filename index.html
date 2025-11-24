@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insight AI - Text Summarization</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="p-4 flex flex-col items-center justify-start">
+    <div class="main-container">
+        <header class="text-center">
+            <h1 class="text-4xl font-extrabold text-white tracking-wide" id="main-title">
+                VERİ SIKILAŞTIRMA MODÜLÜ
+            </h1>
+            <p class="text-gray-400 mt-2 text-sm" id="main-subtitle">Metinlerinizi yapay zeka ile anında özetleyin.</p>
+        </header>
+        <div class="card-area">
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <label id="source-label" class="label-text mb-0">Kaynak Dil:</label>
+                    <select id="source-language" onchange="updateUI()" class="input-style px-3 py-2 border rounded-lg text-white text-sm transition duration-150 w-32">
+                        <option value="Turkish">TR</option>
+                        <option value="English" selected>EN</option>
+                        <option value="French">FR</option>
+                        <option value="Spanish">ES</option>
+                        <option value="German">DE</option>
+                        <option value="Arabic">AR</option>
+                        <option value="Russian">RU</option>
+                        <option value="Chinese">ZH</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="input-text" id="input-label" class="label-text">Veri Girişi:</label>
+                    <textarea 
+                        id="input-text" 
+                        rows="8"
+                        placeholder="Paste the text here..."
+                        class="w-full p-4 input-style rounded-lg resize-none text-sm"
+                    ></textarea>
+                </div>
+            </div>
+            <div id="controls-grid" class="flex justify-center">
+                <button 
+                    onclick="processText()"
+                    id="process-button"
+                    class="primary-button text-white font-bold py-3 px-6 rounded-lg w-full text-lg uppercase shadow-lg"
+                >
+                    <i class="fas fa-search"></i> ÖZETLE
+                </button>
+            </div>
+            <div id="output-area" class="p-4 rounded-lg min-h-[12rem] relative">
+                <p class="text-sm text-[#00A389] mb-2 flex items-center font-bold" id="output-label">
+                    <i class="fas fa-brain mr-2"></i> İŞLENMİŞ ÇIKTI:
+                </p>
+                <div id="output-text" class="text-gray-200 whitespace-pre-wrap text-sm">
+                    Henüz bir işlem yapılmadı.
+                </div>
+                <div id="loading-spinner" class="absolute inset-0 bg-[#1E293B]/90 flex flex-col items-center justify-center hidden rounded-lg">
+                    <i class="fas fa-spinner fa-spin text-[#00A389] text-4xl"></i>
+                    <p class="text-[#00A389] mt-3 text-sm" id="loading-text">Veri Analizi Yapılıyor...</p>
+                </div>
+            </div>
+            <p id="status-message" class="text-sm text-red-400 hidden mt-3"></p>
+        </div>
+        <div class="footer-attribution" id="footer-text">
+            A utility built with Gemini. Code attribution: <a href="https://github.com/ismailoksuz" target="_blank" class="footer-link">github.com/ismailoksuz</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #000000;
+    color: #E2E8F0;
+    min-height: 100vh;
+}
+
+.main-container {
+    width: 100%;
+    max-width: 504px;
+    margin-top: 2.5rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.card-area {
+    background-color: rgba(30, 41, 59, 0.5);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid #334155;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.primary-button {
+    background-color: #00A389;
+    transition: all 0.25s ease-in-out; 
+    box-shadow: 0 4px 6px -1px rgba(0, 163, 137, 0.4);
+}
+.primary-button:hover {
+    background-color: #008775;
+    box-shadow: 0 4px 10px rgba(0, 163, 137, 0.6);
+    transform: translateY(-2px); 
+}
+.primary-button:active {
+    transform: scale(0.98); 
+}
+.primary-button:disabled {
+    background-color: #00A389;
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.input-style {
+    background-color: #1E293B;
+    border-color: #475569;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    color: #FFFFFF;
+}
+.input-style:focus {
+    outline: none;
+    border-color: #00A389;
+    box-shadow: 0 0 0 3px rgba(0, 163, 137, 0.5);
+}
+.label-text {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #CBD5E1;
+}
+
+#output-area {
+    background-color: #1E293B;
+    border: 1px solid #334155;
+    border-left: 5px solid #00A389;
+}
+
+.footer-link {
+    color: #00A389;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.footer-link:hover {
+    color: #008775; 
+}
